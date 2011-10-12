@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="horizontal">
+	<LinearLayout
+	    android:id="@+id/question_layout"
+	    android:layout_height="fill_parent" android:orientation="vertical"
+	    android:layout_gravity="center" android:layout_weight="0.5" android:layout_width="0dp">
+	    <FrameLayout android:id="@+id/question_frame"
+    		android:layout_width="fill_parent" android:layout_weight="0.9" android:layout_height="0dp"></FrameLayout>
+	    <TextView android:layout_weight="0.1" android:layout_height="0dp" android:layout_gravity="center" android:id="@+id/question_text" android:layout_width="wrap_content"></TextView>
+	</LinearLayout>
+	<LinearLayout
+	    android:id="@+id/answer_layout"
+	    android:layout_height="fill_parent" android:orientation="vertical" android:layout_weight="0.5" android:layout_width="0dp">
+		<TableLayout android:layout_height="0dp" android:layout_weight="0.4" android:layout_width="fill_parent" android:padding="10dip" android:id="@+id/answer_table">
+			<TableRow android:layout_height="0dp" android:layout_weight="0.5" android:id="@+id/answer_row_1" android:layout_gravity="center" android:layout_width="fill_parent">
+				<Button android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_a" android:typeface="serif" android:textSize="28dp" android:text="A"></Button>
+				<Button android:layout_height="fill_parent" android:text="A" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_a_sharp_b_flat" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="B" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_b" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="C" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_c" android:typeface="serif" android:textSize="28dp"></Button>
+			</TableRow>
+			<TableRow android:layout_height="0dp" android:layout_weight="0.5" android:id="@+id/answer_row_2" android:layout_width="fill_parent">
+				<Button android:layout_height="fill_parent" android:text="C" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_c_sharp_d_flat" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="D" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_d" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="D" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_d_sharp_e_flat" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="E" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_e" android:typeface="serif" android:textSize="28dp"></Button>
+			</TableRow>
+			<TableRow android:layout_height="0dp" android:layout_weight="0.5" android:id="@+id/answer_row_3" android:layout_width="fill_parent">
+				<Button android:layout_height="fill_parent" android:text="F" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_f" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="F" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_f_sharp_g_flat" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="G" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_g" android:typeface="serif" android:textSize="28dp"></Button>
+				<Button android:layout_height="fill_parent" android:text="G" android:layout_width="0dp" android:layout_weight="0.25" android:id="@+id/btn_answer_g_sharp_a_flat" android:typeface="serif" android:textSize="28dp"></Button>
+			</TableRow>
+		</TableLayout>
+	</LinearLayout>
+</LinearLayout>

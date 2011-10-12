@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    <ListView android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="0.9" android:id="@android:id/list"></ListView>
+    <Button android:id="@+id/btn_play" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_margin="5dip" android:text="Play!"></Button>
+    
+</LinearLayout>

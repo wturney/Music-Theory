@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MusicTheory!</string>
+    <string name="app_name">Music Theory</string>
+    <string name="note_identification">Note Identification</string>
+    <string name="key_identification">Key Identification</string>
+</resources>

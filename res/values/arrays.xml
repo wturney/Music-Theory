@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="ledgerPreferences">
+		<item>Zero</item>
+		<item>One</item>
+		<item>Two</item>
+		<item>Three</item>
+		<item>Four</item>
+	</string-array>
+	<string-array name="ledgerPreferenceValues">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+	</string-array>
+	<string-array name="keyTypePreferences">
+		<item>Major</item>
+		<item>Minor</item>
+	</string-array>
+</resources>

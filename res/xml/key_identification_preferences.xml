@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" android:key="keyGamePreferences" android:title="Key Game Preferences">
+    <PreferenceCategory android:title="Keys" android:key="keyPreferences">
+        <ListPreference android:defaultValue="Major" android:summary="Major" android:title="Key Type" android:entryValues="@array/keyTypePreferences" android:entries="@array/keyTypePreferences" android:key="keyType"></ListPreference><CheckBoxPreference android:defaultValue="true" android:key="keyFlats" android:title="Flat Signatures"></CheckBoxPreference>
+        <CheckBoxPreference android:defaultValue="true" android:key="keySharps" android:title="Sharp Signatures"></CheckBoxPreference>
+        
+        
+        
+        
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Clefs" android:key="keyClefPreferences"><CheckBoxPreference android:defaultValue="true" android:title="Treble Clef" android:key="keyClefTreble"></CheckBoxPreference><CheckBoxPreference android:title="Alto Clef" android:key="keyClefAlto" android:defaultValue="true"></CheckBoxPreference><CheckBoxPreference android:title="Tenor Clef" android:key="keyClefTenor" android:defaultValue="true"></CheckBoxPreference><CheckBoxPreference android:defaultValue="true" android:title="Bass Clef" android:key="keyClefBass"></CheckBoxPreference>
+    
+</PreferenceCategory>
+    
+</PreferenceScreen>

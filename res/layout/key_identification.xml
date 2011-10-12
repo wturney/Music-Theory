@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/question_layout" android:orientation="vertical" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.5">
+        <FrameLayout android:layout_height="0dp" android:layout_gravity="center" android:layout_width="fill_parent" android:id="@+id/question_frame" android:layout_weight="0.9"></FrameLayout>
+        <TextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="0.1" android:id="@+id/question_text"></TextView>
+    </LinearLayout>
+	<TableLayout android:layout_width="fill_parent"
+		android:padding="10dip" android:id="@+id/answer_table" android:layout_height="0dp" android:layout_weight="0.5">
+		<TableRow android:id="@+id/answer_row_1"
+			android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.5">
+			<Button android:layout_weight="0.25" android:layout_width="0dp" android:layout_height="fill_parent" android:id="@+id/btn_answer_a" android:text="A" android:typeface="serif" android:textSize="28dp"></Button>
+			<Button android:layout_weight="0.25" android:layout_width="0dp" android:layout_height="fill_parent" android:id="@+id/btn_answer_a_sharp_b_flat" android:typeface="serif" android:text="ab" android:textSize="28dp"></Button>
+			<Button android:layout_weight="0.25" android:layout_width="0dp" android:layout_height="fill_parent" android:typeface="serif" android:id="@+id/btn_answer_b" android:text="B" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent"
+				android:layout_width="0dp" android:typeface="serif" android:layout_weight="0.25" android:id="@+id/btn_answer_c" android:text="C" android:textSize="28dp"></Button>
+		</TableRow>
+		<TableRow android:id="@+id/answer_row_2"
+			android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.5">
+			<Button android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25" android:typeface="serif" android:text="C" android:id="@+id/btn_answer_c_sharp_d_flat" android:textSize="28dp"></Button>
+			<Button android:layout_width="0dp" android:layout_height="fill_parent" android:typeface="serif" android:layout_weight="0.25" android:id="@+id/btn_answer_d" android:text="D" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent"
+				android:layout_width="0dp" android:typeface="serif" android:layout_weight="0.25" android:text="D" android:id="@+id/btn_answer_d_sharp_e_flat" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent"
+				android:layout_width="0dp" android:typeface="serif" android:layout_weight="0.25" android:id="@+id/btn_answer_e" android:text="E" android:textSize="28dp"></Button>
+		</TableRow>
+		<TableRow android:layout_height="0dp" android:layout_weight="0.5" android:id="@+id/answer_row_3" android:layout_width="fill_parent">
+			<Button android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25" android:typeface="serif" android:id="@+id/btn_answer_f" android:text="F" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25" android:typeface="serif" android:text="F" android:id="@+id/btn_answer_f_sharp_g_flat" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25" android:typeface="serif" android:id="@+id/btn_answer_g" android:text="G" android:textSize="28dp"></Button>
+			<Button android:layout_height="fill_parent" android:text="G" android:layout_width="0dp" android:layout_weight="0.25" android:typeface="serif" android:id="@+id/btn_answer_g_sharp_a_flat" android:textSize="28dp"></Button>
+		</TableRow>
+	</TableLayout>
+</LinearLayout>
