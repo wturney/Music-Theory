@@ -3,6 +3,12 @@ Music Theory
 
 A simple Android app for studying various facets of music theory.
 
+__Screenshots__
+
+Notes: [Vertical](http://www.hightower-software.com/mt_ss_notes_1.png) [Horizontal](http://www.hightower-software.com/mt_ss_notes_2.png) [Settings](http://www.hightower-software.com/mt_ss_prefs_1.png)
+
+Key Signatures: [Vertical](http://www.hightower-software.com/mt_ss_keys_1.png) [Horizontal](http://www.hightower-software.com/mt_ss_keys_2.png) [Settings](http://www.hightower-software.com/mt_ss_prefs_2.png)
+
 Modules
 =======
 
