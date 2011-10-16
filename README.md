@@ -1,7 +1,7 @@
 Music Theory
 ============
 
-A simple Android app for studying various facets of music theory.
+A simple Android (__2.1+__) app for studying various facets of music theory.
 
 __Screenshots__
 
@@ -13,7 +13,6 @@ Modules
 =======
 
 __Note Identification__
-
 
 Currently supports the four most common clefs. Random note generation can be limited by a number of ledger lines above or below the staff.
 

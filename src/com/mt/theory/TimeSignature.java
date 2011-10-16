@@ -5,9 +5,6 @@ import android.os.Parcelable;
 
 public class TimeSignature implements Parcelable {
 
-	private int noteValue;
-	private int notesPerMeasure;
-
 	public static final Parcelable.Creator<TimeSignature> CREATOR = new Parcelable.Creator<TimeSignature>() {
 
 		@Override
@@ -21,6 +18,9 @@ public class TimeSignature implements Parcelable {
 		}
 
 	};
+	private int notesPerMeasure;
+
+	private int noteValue;
 
 	public TimeSignature(int noteValue, int notesPerMeasure) {
 		this.noteValue = noteValue;

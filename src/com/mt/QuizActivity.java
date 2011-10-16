@@ -1,10 +1,12 @@
 package com.mt;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -14,10 +16,10 @@ import com.mt.theory.Score;
 public abstract class QuizActivity extends Activity implements OnClickListener {
 
 	private ImageView correctImage;
-	private ImageView incorrectImage;
-
 	private Score currentQuestion;
 
+	private ImageView incorrectImage;
+	private MediaPlayer mp;
 	private CountDownTimer nextQuestionViewTimer = new CountDownTimer(1000, 500) {
 
 		@Override
@@ -29,6 +31,8 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 		public void onTick(long millisUntilFinished) {
 		}
 	};
+
+	private int questionNumber;
 
 	public abstract void displayQuestion();
 
@@ -46,16 +50,33 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 		return currentQuestion;
 	}
 
+	public MediaPlayer getMediaPlayer() {
+		return mp;
+	}
+
+	public int getQuestionNumber() {
+		return questionNumber;
+	}
+
 	@Override
 	public void onClick(View v) {
 		if (evaluateAnswer(v.getId())) {
-			currentQuestion = generateQuestion();
-			displayResult(correctImage);
+			onCorrectAnswer();
 		} else {
-			displayResult(incorrectImage);
+			onIncorrectAnswer();
 		}
 
 		nextQuestionViewTimer.start();
+	}
+
+	public void onCorrectAnswer() {
+		currentQuestion = generateQuestion();
+		questionNumber++;
+		displayResult(correctImage);
+	}
+
+	public void onIncorrectAnswer() {
+		displayResult(incorrectImage);
 	}
 
 	public boolean questionReady() {
@@ -67,9 +88,23 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 	}
 
 	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		mp = new MediaPlayer();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+
+	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		currentQuestion = savedInstanceState.getParcelable("score");
-
+		questionNumber = savedInstanceState.getInt("qnum");
 		super.onRestoreInstanceState(savedInstanceState);
 	}
 
@@ -97,7 +132,7 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		outState.putParcelable("score", currentQuestion);
-
+		outState.putInt("qnum", questionNumber);
 		super.onSaveInstanceState(outState);
 	}
 }

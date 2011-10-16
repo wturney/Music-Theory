@@ -22,14 +22,14 @@ import com.mt.utils.NoteUtil;
 
 public class ScoreView extends View {
 
-	private static final int STAFF_SPACING = 30;
-
-	private static Drawable sharpDrawable;
 	private static Drawable flatDrawable;
 
-	private Score score;
+	private static Drawable sharpDrawable;
+	private static final int STAFF_SPACING = 30;
 
 	private Paint paint;
+
+	private Score score;
 
 	public ScoreView(Context context, Score score) {
 		super(context);

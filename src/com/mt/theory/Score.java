@@ -8,11 +8,6 @@ import android.os.Parcelable;
 
 public class Score implements Parcelable {
 
-	private Clef clef;
-	private List<NoteGroup> noteGroups;
-	private KeySignature keySignature;
-	private TimeSignature timeSignature;
-
 	public static final Parcelable.Creator<Score> CREATOR = new Parcelable.Creator<Score>() {
 
 		@Override
@@ -26,6 +21,11 @@ public class Score implements Parcelable {
 		}
 
 	};
+	private Clef clef;
+	private KeySignature keySignature;
+	private List<NoteGroup> noteGroups;
+
+	private TimeSignature timeSignature;
 
 	public Score(Clef clef, List<NoteGroup> noteGroups, KeySignature keySignature, TimeSignature timeSignature) {
 		this.clef = clef;

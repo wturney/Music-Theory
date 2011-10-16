@@ -2,8 +2,8 @@ package com.mt.theory;
 
 public class Interval {
 	private Note firstNote;
-	private Note secondNote;
 	private Quality quality;
+	private Note secondNote;
 
 	public Note getFirstNote() {
 		return firstNote;

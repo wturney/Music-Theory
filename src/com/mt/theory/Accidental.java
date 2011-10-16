@@ -1,9 +1,9 @@
 package com.mt.theory;
 
 public enum Accidental {
-	SHARP,
+	DOUBLE_FLAT,
 	DOUBLE_SHARP,
 	FLAT,
-	DOUBLE_FLAT,
-	NATURAL;
+	NATURAL,
+	SHARP;
 }

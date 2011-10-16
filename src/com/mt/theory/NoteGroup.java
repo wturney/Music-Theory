@@ -9,8 +9,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NoteGroup implements Parcelable {
-	private List<Note> notes;
-
 	public static final Parcelable.Creator<NoteGroup> CREATOR = new Parcelable.Creator<NoteGroup>() {
 
 		@Override
@@ -24,6 +22,8 @@ public class NoteGroup implements Parcelable {
 		}
 
 	};
+
+	private List<Note> notes;
 
 	public NoteGroup() {
 		this.notes = new ArrayList<Note>();

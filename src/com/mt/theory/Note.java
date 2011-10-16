@@ -4,12 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Note implements Parcelable {
-	private Duration duration;
-	private Tone tone;
-	private Accidental accidental;
-	private int octave;
-	private boolean dotted;
-
 	public static final Parcelable.Creator<Note> CREATOR = new Parcelable.Creator<Note>() {
 
 		@Override
@@ -23,6 +17,12 @@ public class Note implements Parcelable {
 		}
 
 	};
+	private Accidental accidental;
+	private boolean dotted;
+	private Duration duration;
+	private int octave;
+
+	private Tone tone;
 
 	public Note() {
 		this(4, Tone.C);

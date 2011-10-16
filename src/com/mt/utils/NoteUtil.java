@@ -23,6 +23,22 @@ public class NoteUtil {
 	}
 
 	/**
+	 * Utility method for getting the midi numeric representation of this note.
+	 * Midi values are all relative to C4 which is arbitrarily assigned 60. This
+	 * value isn't used for generating note quizzes because it takes into
+	 * account the entire chromatic scale. The note quiz is only concerned with
+	 * the users ability to differentiate notes based on their position on the
+	 * staff regardless of accidentals.
+	 * 
+	 * @param octave
+	 * @param tone
+	 * @return
+	 */
+	public static int getMidiPositionValue(int octave, Tone tone) {
+		return ((octave + 1) * 12) + tone.getMidiPositionValue();
+	}
+
+	/**
 	 * Utility method for obtaining an octave & tone from an integer
 	 * representation. This is primarily used to simply generating random notes
 	 * that fall within a minimum and maximum range on the staff
@@ -54,7 +70,7 @@ public class NoteUtil {
 	 * @return
 	 */
 	public static int getPositionValue(int octave, Tone tone) {
-		return (octave * 7) + tone.getRelativePositionValue();
+		return (octave * 7) + tone.getStaffPositionValue();
 	}
 
 	public static int getStepsFromStaffCenter(int notePositionValue, Clef clef) {

@@ -25,23 +25,23 @@ import com.mt.utils.QuizUtil;
 
 public class KeySignatureQuizActivity extends QuizActivity {
 
-	private static final String PREFERENCE_KEY_PREFIX = "key";
-	private static final char FLAT_CHAR = '\u266D';
-	private static final char SHARP_CHAR = '\u266F';
-
+	private static final boolean[] btnAccidental = {
+		false, true, false, false, true, false, true, false, false, true, false, true };
 	private static final int[] btnIds = {
 		R.id.btn_answer_a, R.id.btn_answer_a_sharp_b_flat, R.id.btn_answer_b, R.id.btn_answer_c,
 		R.id.btn_answer_c_sharp_d_flat, R.id.btn_answer_d, R.id.btn_answer_d_sharp_e_flat, R.id.btn_answer_e,
 		R.id.btn_answer_f, R.id.btn_answer_f_sharp_g_flat, R.id.btn_answer_g, R.id.btn_answer_g_sharp_a_flat };
-
-	private static final boolean[] btnAccidental = {
-		false, true, false, false, true, false, true, false, false, true, false, true };
+	private static final String[] btnTextFlat = {
+		"A", "B", "B", "C", "D", "D", "E", "E", "F", "G", "G", "A" };
 
 	private static final String[] btnTextSharp = {
 		"A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G" };
 
-	private static final String[] btnTextFlat = {
-		"A", "B", "B", "C", "D", "D", "E", "E", "F", "G", "G", "A" };
+	private static final char FLAT_CHAR = '\u266D';
+
+	private static final String PREFERENCE_KEY_PREFIX = "key";
+
+	private static final char SHARP_CHAR = '\u266F';
 
 	private Map<KeySignature, Integer> majorKeyButtonMap;
 	private Map<KeySignature, Integer> minorKeyButtonMap;

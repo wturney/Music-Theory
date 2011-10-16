@@ -8,16 +8,16 @@ public enum Clef {
 	TENOR("Tenor", 4, Tone.A, R.drawable.clef_c, 0.75f, 26, 32, 26, 32),
 	TREBLE("Treble", 5, Tone.B, R.drawable.clef_treble, 0.49f, 35, 41, 33, 39);
 
-	private String keySuffix;
-	private Tone middleTone;
-	private int middleOctave;
 	private int drawableResourceId;
-	private float ratioAboveMiddle;
-
-	private int minSharpKeyPosition;
-	private int maxSharpKeyPosition;
-	private int minFlatKeyPosition;
+	private String keySuffix;
 	private int maxFlatKeyPosition;
+	private int maxSharpKeyPosition;
+	private int middleOctave;
+
+	private Tone middleTone;
+	private int minFlatKeyPosition;
+	private int minSharpKeyPosition;
+	private float ratioAboveMiddle;
 
 	private Clef(String keySuffix, int middleOctave, Tone middleTone, int drawableResourceId, float ratioAboveMiddle,
 			int minSharpKeyPosition, int maxSharpKeyPosition, int minFlatKeyPosition, int maxFlatKeyPosition) {
