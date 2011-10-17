@@ -28,7 +28,11 @@ public class NoteQuizActivity extends QuizActivity {
 
 	private static final String PREFERENCE_KEY_PREFIX = "note";
 
+	private SharedPreferences prefs;
 	private Map<Tone, Integer> noteButtonMap;
+	private boolean soundEnabled;
+	private int soundDuration;
+	private int soundInstrument;
 
 	@Override
 	public void displayQuestion() {
@@ -46,8 +50,6 @@ public class NoteQuizActivity extends QuizActivity {
 
 	@Override
 	public Score generateQuestion() {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
 		Clef clef = QuizUtil.getRandomClefFromPreferences(prefs, PREFERENCE_KEY_PREFIX);
 
 		Note note = QuizUtil.getRandomNoteFromPreferenceRange(clef, prefs, PREFERENCE_KEY_PREFIX);
@@ -58,26 +60,28 @@ public class NoteQuizActivity extends QuizActivity {
 
 	@Override
 	public void onCorrectAnswer() {
-		generateNoteAudio();
-		playNoteAudio();
+		if (soundEnabled) {
+			generateNotesound();
+			playNotesound();
+		}
 		super.onCorrectAnswer();
 	}
 
-	private void generateNoteAudio() {
+	private void generateNotesound() {
 		try {
 			MidiTrack midi = new MidiTrack();
 			midi.setBPM(80);
-			midi.progChange(1);
+			midi.progChange(soundInstrument);
 			Note note = getCurrentQuestion().getNoteGroups().get(0).getNotes().get(0);
 			int position = NoteUtil.getMidiPositionValue(note.getOctave(), note.getTone());
-			midi.addNote(8, position, 127);
+			midi.addNote(soundDuration, position, 127);
 			midi.writeToFile("note.mid", getCacheDir());
 		} catch (Exception e) {
 
 		}
 	}
 
-	private void playNoteAudio() {
+	private void playNotesound() {
 		try {
 			MediaPlayer mp = getMediaPlayer();
 			if (mp.isPlaying() || mp.isLooping()) {
@@ -131,6 +135,11 @@ public class NoteQuizActivity extends QuizActivity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.note_identification);
+
+		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		soundEnabled = prefs.getBoolean("noteSoundEnabled", true);
+		soundDuration = Integer.parseInt(prefs.getString("noteSoundDuration", "0"));
+		soundInstrument = Integer.parseInt(prefs.getString("noteSoundInstrument", "8"));
 
 		setupListeners();
 	}

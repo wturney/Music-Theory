@@ -1,10 +1,10 @@
 package com.mt.theory;
 
 public enum Duration {
-	WHOLE,
+	EIGHTH,
 	HALF,
 	QUARTER,
-	EIGHTH,
 	SIXTEENTH,
-	THIRTY_SECOND
+	THIRTY_SECOND,
+	WHOLE
 }

@@ -17,7 +17,6 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 
 	private ImageView correctImage;
 	private Score currentQuestion;
-
 	private ImageView incorrectImage;
 	private MediaPlayer mp;
 	private CountDownTimer nextQuestionViewTimer = new CountDownTimer(1000, 500) {
@@ -32,8 +31,10 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 		}
 	};
 
-	private int questionNumber;
-
+	/**
+	 * Implementing classs should use this method to do any necessary view
+	 * manipulation for displaying the question
+	 */
 	public abstract void displayQuestion();
 
 	public void displayResult(ImageView result) {
@@ -42,20 +43,45 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 		frame.addView(result);
 	}
 
+	/**
+	 * This method is used to determine if the resource selected by the user was
+	 * in fact the correct answer to the question.
+	 * 
+	 * @param clickedResourceId
+	 *            The resource selected by the player as their answer to the
+	 *            current question
+	 * @return True only if the provided resource id matches the resource
+	 *         associated with the correct answer.
+	 */
 	public abstract boolean evaluateAnswer(int clickedResourceId);
 
+	/**
+	 * Generates whatever musical notation is necessary to represent this
+	 * question. E.g. Note quiz randomly selects a Clef, Octave and Tone to be
+	 * displayed to a user on the staff.
+	 * 
+	 * @return A Score object representing the musical notation to be displayed
+	 *         for this question.
+	 */
 	public abstract Score generateQuestion();
 
+	/**
+	 * Returns the current question displayed to the user
+	 * 
+	 * @return
+	 */
 	public Score getCurrentQuestion() {
 		return currentQuestion;
 	}
 
+	/**
+	 * The media player associated with this quiz. Implementing classes should
+	 * reset and reuse this rather than creating multiple instances.
+	 * 
+	 * @return
+	 */
 	public MediaPlayer getMediaPlayer() {
 		return mp;
-	}
-
-	public int getQuestionNumber() {
-		return questionNumber;
 	}
 
 	@Override
@@ -69,12 +95,19 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 		nextQuestionViewTimer.start();
 	}
 
+	/**
+	 * Called after a user has selected the correct answer, and before the next
+	 * question has been generated.
+	 */
 	public void onCorrectAnswer() {
 		currentQuestion = generateQuestion();
-		questionNumber++;
 		displayResult(correctImage);
 	}
 
+	/**
+	 * Called after the user has selected an incorrect answer, and before the
+	 * question is redisplayed
+	 */
 	public void onIncorrectAnswer() {
 		displayResult(incorrectImage);
 	}
@@ -104,7 +137,6 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		currentQuestion = savedInstanceState.getParcelable("score");
-		questionNumber = savedInstanceState.getInt("qnum");
 		super.onRestoreInstanceState(savedInstanceState);
 	}
 
@@ -132,7 +164,6 @@ public abstract class QuizActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		outState.putParcelable("score", currentQuestion);
-		outState.putInt("qnum", questionNumber);
 		super.onSaveInstanceState(outState);
 	}
 }

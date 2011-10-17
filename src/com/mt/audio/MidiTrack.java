@@ -35,11 +35,11 @@ public class MidiTrack {
 	}
 
 	public void noteOff(int delta, int pitch) {
-		playEvents.add(new int[] {delta, 0x81, pitch, 0x0});
+		playEvents.add(new int[] {delta, 0x80, pitch, 0x0});
 	}
 
 	public void noteOn(int delta, int pitch, int velocity) {
-		playEvents.add(new int[] {delta, 0x91, pitch, velocity});
+		playEvents.add(new int[] {delta, 0x90, pitch, velocity});
 	}
 
 	public void addNote(int duration, int pitch, int velocity) {

@@ -14,6 +14,28 @@
 		<item>3</item>
 		<item>4</item>
 	</string-array>
+	<string-array name="instrumentPreferences">
+		<item>Piano</item>
+		<item>Flute</item>
+		<item>Bass Guitar</item>
+		<item>Violin</item>
+	</string-array>
+	<string-array name="instrumentPreferenceValues">
+		<item>0</item>
+		<item>73</item>
+		<item>33</item>
+		<item>40</item>
+	</string-array>
+	<string-array name="noteSoundDurations">
+		<item>Short</item>
+		<item>Medium</item>
+		<item>Long</item>
+	</string-array>
+	<string-array name="noteSoundDurationValues">
+		<item>8</item>
+		<item>16</item>
+		<item>32</item>
+	</string-array>
 	<string-array name="keyTypePreferences">
 		<item>Major</item>
 		<item>Minor</item>

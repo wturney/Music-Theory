@@ -1,33 +1,32 @@
 package com.mt.theory;
 
-import java.util.Arrays;
 
 public enum KeySignature {
-	C(0, Accidental.SHARP),
-	G(1, Accidental.SHARP),
-	D(2, Accidental.SHARP),
 	A(3, Accidental.SHARP),
-	E(4, Accidental.SHARP),
-	B(5, Accidental.SHARP),
-	F_SHARP(6, Accidental.SHARP),
-	C_SHARP(7, Accidental.SHARP),
-	F(1, Accidental.FLAT),
-	B_FLAT(2, Accidental.FLAT),
-	E_FLAT(3, Accidental.FLAT),
 	A_FLAT(4, Accidental.FLAT),
+	B(5, Accidental.SHARP),
+	B_FLAT(2, Accidental.FLAT),
+	C(0, Accidental.SHARP),
+	C_FLAT(7, Accidental.FLAT),
+	C_SHARP(7, Accidental.SHARP),
+	D(2, Accidental.SHARP),
 	D_FLAT(5, Accidental.FLAT),
-	G_FLAT(6, Accidental.FLAT),
-	C_FLAT(7, Accidental.FLAT);
-
-	private static final Tone[] SHARP_TONE_ORDER = {
-		Tone.F, Tone.C, Tone.G, Tone.D, Tone.A, Tone.E, Tone.B };
-	private static final Tone[] FLAT_TONE_ORDER = {
-		Tone.B, Tone.E, Tone.A, Tone.D, Tone.G, Tone.C, Tone.F };
+	E(4, Accidental.SHARP),
+	E_FLAT(3, Accidental.FLAT),
+	F(1, Accidental.FLAT),
+	F_SHARP(6, Accidental.SHARP),
+	G(1, Accidental.SHARP),
+	G_FLAT(6, Accidental.FLAT);
 
 	private static final KeySignature[] FLAT_KEYS = {
 		C, B_FLAT, E_FLAT, A_FLAT, D_FLAT, G_FLAT, C_FLAT };
+	private static final Tone[] FLAT_TONE_ORDER = {
+		Tone.B, Tone.E, Tone.A, Tone.D, Tone.G, Tone.C, Tone.F };
+
 	private static final KeySignature[] SHARP_KEYS = {
 		C, G, D, A, E, B, F_SHARP, C_SHARP };
+	private static final Tone[] SHARP_TONE_ORDER = {
+		Tone.F, Tone.C, Tone.G, Tone.D, Tone.A, Tone.E, Tone.B };
 
 	public static KeySignature[] getFlatKeys() {
 		KeySignature[] copy = new KeySignature[FLAT_KEYS.length];
@@ -64,7 +63,7 @@ public enum KeySignature {
 		for (int i = 0; i < accidentalCount; i++) {
 			copy[i] = order[i];
 		}
-		
+
 		return copy;
 	}
 

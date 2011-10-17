@@ -1,17 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="Note Game Preferences" android:key="noteGamePreferences">
-	<PreferenceCategory android:key="noteRangePreferences" android:title="Note Range"><ListPreference android:enabled="true" android:entryValues="@array/ledgerPreferenceValues" android:entries="@array/ledgerPreferences" android:defaultValue="2" android:key="noteUpperLedgers" android:summary="2 Ledger Lines" android:title="Upper Range" android:dialogTitle="Max. Upper Ledgers"></ListPreference><ListPreference android:enabled="true" android:entryValues="@array/ledgerPreferenceValues" android:entries="@array/ledgerPreferences" android:defaultValue="2" android:key="noteLowerLedgers" android:summary="2 Ledger Lines" android:title="Lower Range" android:dialogTitle="Max. Lower Ledgers"></ListPreference></PreferenceCategory><PreferenceCategory android:title="Clefs" android:key="noteClefPreferences">
-		
-		
+	android:title="Note Game Preferences"
+	android:key="noteGamePreferences">
+	<PreferenceCategory
+		android:key="noteRangePreferences"
+		android:title="Note Range">
+		<ListPreference
+			android:enabled="true"
+			android:entryValues="@array/ledgerPreferenceValues"
+			android:entries="@array/ledgerPreferences"
+			android:defaultValue="2"
+			android:key="noteUpperLedgers"
+			android:summary="2 Ledger Lines"
+			android:title="Upper Range"
+			android:dialogTitle="Max. Upper Ledgers"></ListPreference>
+		<ListPreference
+			android:enabled="true"
+			android:entryValues="@array/ledgerPreferenceValues"
+			android:entries="@array/ledgerPreferences"
+			android:defaultValue="2"
+			android:key="noteLowerLedgers"
+			android:summary="2 Ledger Lines"
+			android:title="Lower Range"
+			android:dialogTitle="Max. Lower Ledgers"></ListPreference>
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="Clefs"
+		android:key="noteClefPreferences">
 		<CheckBoxPreference
 			android:title="Treble Clef"
-			android:defaultValue="true" android:key="noteClefTreble"></CheckBoxPreference><CheckBoxPreference android:title="Alto Clef" android:key="noteClefAlto" android:defaultValue="true"></CheckBoxPreference><CheckBoxPreference android:title="Tenor Clef" android:key="noteClefTenor" android:defaultValue="true"></CheckBoxPreference><CheckBoxPreference android:defaultValue="true" android:title="Bass Clef" android:key="noteClefBass"></CheckBoxPreference>
-			
-			
-		
+			android:defaultValue="true"
+			android:key="noteClefTreble"></CheckBoxPreference>
+		<CheckBoxPreference
+			android:title="Alto Clef"
+			android:key="noteClefAlto"
+			android:defaultValue="true"></CheckBoxPreference>
+		<CheckBoxPreference
+			android:title="Tenor Clef"
+			android:key="noteClefTenor"
+			android:defaultValue="true"></CheckBoxPreference>
+		<CheckBoxPreference
+			android:defaultValue="true"
+			android:title="Bass Clef"
+			android:key="noteClefBass"></CheckBoxPreference>
 	</PreferenceCategory>
-	
-
+	<PreferenceCategory
+		android:title="Sound"
+		android:key="noteSoundPreferences">
+		<CheckBoxPreference
+			android:key="noteSoundEnabled"
+			android:title="Enable Sound"
+			android:defaultValue="true"
+			android:summary="Play correct notes"></CheckBoxPreference>
+		<ListPreference
+			android:entryValues="@array/instrumentPreferenceValues"
+			android:key="noteSoundInstrument"
+			android:title="Instrument"
+			android:entries="@array/instrumentPreferences"
+			android:defaultValue="0"
+			android:dependency="noteSoundEnabled"
+			android:summary="The instrument to use for note playback"></ListPreference>
+		<ListPreference
+			android:entryValues="@array/noteSoundDurationValues"
+			android:key="noteSoundDuration"
+			android:entries="@array/noteSoundDurations"
+			android:dialogTitle="Note Playback Duration"
+			android:title="Duration"
+			android:dependency="noteSoundEnabled"
+			android:summary="The duration to play a given note"
+			android:defaultValue="8"></ListPreference>
+	</PreferenceCategory>
 </PreferenceScreen>
